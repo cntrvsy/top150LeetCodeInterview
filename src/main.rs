@@ -1,47 +1,21 @@
 // region:    --- Modules
 
 mod error;
-
-mod merge_sorted_arrays88;
-
+mod remove_element27;
 pub use error::{Error, Result};
-
 // endregion: --- Modules
 
 fn main() -> Result<()> {
-    // example one
-    let mut example1 = merge_sorted_arrays88::Solution {
-        nums1: vec![1, 2, 3, 0, 0, 0],
-        nums2: vec![2, 5, 6],
-        m: 3,
-        n: 3,
+    let mut example = remove_element27::Solution {
+        nums: vec![0, 1, 2, 2, 3, 0, 4, 2],
+        val: 2,
     };
 
-    merge_sorted_arrays88::Solution::merge(
-        &mut example1.nums1,
-        example1.m,
-        &mut example1.nums2,
-        example1.n,
-    );
+    let ans = remove_element27::Solution::remove_element(&mut example.nums, example.val);
 
-    println!("{:?}", example1.nums1);
+    println!("{:?}", ans);
 
-    // example two
-    let mut example2 = merge_sorted_arrays88::Solution {
-        nums1: vec![1],
-        nums2: vec![],
-        m: 1,
-        n: 0,
-    };
-
-    merge_sorted_arrays88::Solution::merge(
-        &mut example2.nums1,
-        example2.m,
-        &mut example2.nums2,
-        example2.n,
-    );
-
-    println!("{:?}", example2.nums1);
+    println!("{:?}", example.nums);
 
     Ok(())
 }
