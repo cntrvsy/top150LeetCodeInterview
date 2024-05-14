@@ -1,19 +1,21 @@
 // region:    --- Modules
 
 mod error;
-mod remove_element27;
+mod remove_duplicates_sorted_array26;
 pub use error::{Error, Result};
 // endregion: --- Modules
 
 fn main() -> Result<()> {
-    let mut example = remove_element27::Solution {
-        nums: vec![0, 1, 2, 2, 3, 0, 4, 2],
-        val: 2,
+    let mut example = remove_duplicates_sorted_array26::Solution {
+        nums: vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4],
     };
 
-    let ans = remove_element27::Solution::remove_element(&mut example.nums, example.val);
+    let ans = remove_duplicates_sorted_array26::Solution::remove_duplicates(&mut example.nums);
 
     println!("{:?}", ans);
+
+    // truncate to the first "ans" elements
+    example.nums.truncate(ans as usize);
 
     println!("{:?}", example.nums);
 

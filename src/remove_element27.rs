@@ -54,7 +54,7 @@ pub struct Solution {
 
 impl Solution {
     pub fn remove_element(nums: &mut [i32], val: i32) -> i32 {
-        // the number of elements that are not equal to val
+        // k keeps track of the index where the next unique element should be placed
         let mut k = 0;
         //loops the entire array
         for i in 0..nums.len() {
